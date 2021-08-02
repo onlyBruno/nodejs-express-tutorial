@@ -3,11 +3,15 @@ const Task = require('../models/Task')
 const getAllTask = async (req, res) => {
   try {
     const tasks = await Task.find({})
-    res.status(200).json({tasks})
+    
+    res.status(200).json({ tasks })
+    //res.status(200).json({ tasks, amount: tasks.length })
+    //res.status(200).json({ status: "success", data: {tasks, nbHits: tasks.lenght}})
+    
+
   } catch (error) {
     res.status(500).json({ message: error})
   }
-  
 }
 
 const createTask = async (req, res) => {
@@ -65,7 +69,7 @@ const updateTask = async (req, res) => {
     res.status(200).json({ task })
   } catch (error) {
     res.status(500).json({ message: error})  
-  }
+  }d
 }
 
 
