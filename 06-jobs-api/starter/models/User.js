@@ -20,7 +20,6 @@ const UserSchema = new moongose.Schema({
     type: String,
     require: [true, 'Please provide a password'],
     minlength: 6,
-    maxlength: 14,
   },
 })
 
